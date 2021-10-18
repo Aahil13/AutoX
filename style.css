@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transition: all 3s ease-in;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+        top:0;
+        right: 0;
+        left:0;
+        bottom: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0,0,0,.8)), url("images/hero.jpg") no-repeat bottom;
+    background-size: cover;
+    animation: fade 2s .5s cubic-bezier(0, .5, 0, 1) forwards;
+    opacity: 0;
+}
+
+.hero-text{
+    position: absolute;
+        top: 50%;
+        left:50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pop-in{
+    0%{
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.animation-popin{
+    animation: pop-in 2s cubic-bezier(0, .9, .3, 1.2) forwards;
+    opacity: 0;
+}
+
+.hero-text h1{
+    animation-delay: 1s;
+}
+
+.hero-text h4{
+    animation-delay: 1.2s;
+}
+
+.nav-item button a{
+    text-decoration: none;
+    color: #fff;
+}
