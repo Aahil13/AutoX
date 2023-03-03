@@ -4,6 +4,10 @@
     box-sizing: 0;
 }
 
+body{
+    overflow: scroll;
+}
+
 .row{
     margin: 0 auto;
 }
